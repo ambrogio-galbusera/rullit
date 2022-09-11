@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#03A9F4"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Configuration" />
+
+			<ImageButton
+				android:layout_width="128px"
+				android:layout_height="128px"
+				android:onClick="onBluetoothSettings"
+				android:scaleType="fitCenter"
+				android:src="@drawable/settings"
+				android:text="Bluetooth Settings" />
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Paired device(s)" />
+
+			<Spinner
+				android:id="@+id/pairedDevices"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content" />
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Link" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="horizontal">
+
+			<ImageButton
+				android:layout_width="128px"
+				android:layout_height="128px"
+				android:onClick="onConnectClick"
+				android:scaleType="fitCenter"
+				android:src="@drawable/connect"
+				android:text="Connect" />
+
+			<ImageButton
+				android:layout_width="128px"
+				android:layout_height="128px"
+				android:onClick="onDisconnectClick"
+				android:scaleType="fitCenter"
+				android:src="@drawable/disconnect"
+				android:text="Disconnect" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Controls" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Manual" />
+
+					<ToggleButton
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="onManualClick" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Running" />
+
+					<ToggleButton
+						android:id="@+id/startCommand"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="onStartClick" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Valve" />
+
+					<ToggleButton
+						android:id="@+id/valveCommand"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="onValveClick" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<TextView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:text="Roller" />
+
+					<ToggleButton
+						android:id="@+id/rollerCommand"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:onClick="onRollerClick" />
+				</LinearLayout>
+
+			</LinearLayout>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:orientation="vertical">
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<ImageButton
+						android:id="@+id/arrowLeftWind"
+						android:tag="4"
+						android:layout_width="256px"
+						android:layout_height="256px"
+						android:scaleType="fitCenter"
+						android:src="@drawable/up"
+						android:text="Up" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<ImageView
+						android:id="@+id/switchFront"
+						android:layout_width="256px"
+						android:layout_height="48px"
+						android:src="@drawable/switch_hor_green" />
+
+					<ImageButton
+						android:id="@+id/arrowUp"
+						android:tag="4"
+						android:visibility="invisible"
+						android:layout_width="256px"
+						android:layout_height="256px"
+						android:scaleType="fitCenter"
+						android:src="@drawable/up"
+						android:text="Up" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<ImageButton
+						android:id="@+id/arrowRightWind"
+						android:tag="6"
+						android:layout_width="256px"
+						android:layout_height="256px"
+						android:scaleType="fitCenter"
+						android:src="@drawable/up"
+						android:text="Up" />
+				</LinearLayout>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="horizontal">
+
+					<ImageView
+						android:id="@+id/switchLeft"
+						android:layout_width="48px"
+						android:layout_height="256px"
+						android:src="@drawable/switch_vert_green" />
+
+					<ImageButton
+						android:id="@+id/arrowLeft"
+						android:tag="3"
+						android:visibility="invisible"
+						android:layout_width="256px"
+						android:layout_height="256px"
+						android:scaleType="fitCenter"
+						android:src="@drawable/left"
+						android:text="Up" />
+				</LinearLayout>
+
+				<ImageButton
+					android:id="@+id/arrowStop"
+					android:tag="2"
+					android:layout_width="256px"
+					android:layout_height="256px"
+					android:scaleType="fitCenter"
+					android:src="@drawable/stop"
+					android:text="Up" />
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="horizontal">
+
+					<ImageButton
+						android:id="@+id/arrowRight"
+						android:tag="6"
+						android:visibility="invisible"
+						android:layout_width="256px"
+						android:layout_height="256px"
+						android:scaleType="fitCenter"
+						android:src="@drawable/right"
+						android:text="Right" />
+
+					<ImageView
+						android:id="@+id/switchRight"
+						android:layout_width="48px"
+						android:layout_height="256px"
+						android:src="@drawable/switch_vert_green" />
+				</LinearLayout>
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_gravity="center"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<ImageButton
+						android:id="@+id/arrowLeftUnwind"
+						android:tag="3"
+						android:layout_width="256px"
+						android:layout_height="256px"
+						android:scaleType="fitCenter"
+						android:src="@drawable/down"
+						android:text="Down" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<ImageButton
+						android:id="@+id/arrowDown"
+						android:tag="5"
+						android:visibility="invisible"
+						android:layout_width="256px"
+						android:layout_height="256px"
+						android:scaleType="fitCenter"
+						android:src="@drawable/down"
+						android:text="Down" />
+
+					<ImageView
+						android:id="@+id/switchRear"
+						android:layout_width="256px"
+						android:layout_height="48px"
+						android:src="@drawable/switch_hor_green" />
+				</LinearLayout>
+
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:orientation="vertical">
+
+					<ImageButton
+						android:id="@+id/arrowRightUnwind"
+						android:tag="5"
+						android:layout_width="256px"
+						android:layout_height="256px"
+						android:scaleType="fitCenter"
+						android:src="@drawable/down"
+						android:text="Down" />
+				</LinearLayout>
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical">
+
+			<TextView
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Status" />
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="250px"
+					android:layout_height="wrap_content"
+					android:text="Status:" />
+
+				<TextView
+					android:id="@+id/status"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="Waiting for sync"
+					android:textSize="18sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="250px"
+					android:layout_height="wrap_content"
+					android:text="App status:" />
+
+				<TextView
+					android:id="@+id/appStatus"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="--"
+					android:textSize="18sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="250px"
+					android:layout_height="wrap_content"
+					android:text="Position:" />
+
+				<TextView
+					android:id="@+id/pos"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="--,--"
+					android:textSize="18sp" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:layout_width="250px"
+					android:layout_height="wrap_content"
+					android:text="Lengths:" />
+
+				<TextView
+					android:id="@+id/lengths"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:text="--,--"
+					android:textSize="18sp" />
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="200px"
+				android:layout_height="wrap_content"
+				android:text="PWMs:" />
+
+			<TextView
+				android:id="@+id/pwms"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="--,--"
+				android:textSize="18sp" />
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>
