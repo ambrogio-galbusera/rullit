@@ -1,5 +1,5 @@
 # Rullit
-Robot that cleans PV modules. See alla details on Element14
+Robot that cleans PV modules. See alla details on Element14 (https://community.element14.com/challenges-projects/design-challenges/twist-turn-and-move-design-challenge-with-te-robotics/?ICID=DCHmain-featured-top3challenges)
 
 ## Repositories
 Rullit: Arduino firmware (uses two motors, precise but draws a lot of current)
